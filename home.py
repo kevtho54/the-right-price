@@ -46,7 +46,7 @@ def partie():
     global tentative
     # Définit number en récupérant la valeur de entry_guess et en la convertissant en entier
     number = int(entry_guess.get())
-    add_event(number)
+    add_event(str(number) + "€")
 
     # Vérifie si number est un nombre valide (entier)
     # Si ce n'est pas le cas, affiche un message d'erreur dans event_listbox
@@ -72,7 +72,7 @@ def partie():
     tentative_label.config(text="Nombre de tentatives restantes : " + str(tentative))
     #Vérifie si le compteur est a 0, une fois a 0 le jeu est perdu
     if tentative == 0:
-        add_event("Mince, tu as perdu !! Le chiffre était : " +  str(price_random))
+        add_event("Mince, tu as perdu !! Le prix était : " +  str(price_random)+"€")
         start_button.pack(pady= 10)
         return
     #Efface le contenu de entry_guess et met le focus sur l'entrée
